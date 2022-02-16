@@ -9,7 +9,7 @@ Primeiramente o projeto será construindo o back-end e utilizar arquitetura de m
 back-end separado do front, então primeiro será criado back-end utilizando o Laravel, e futuramente 
 o front-end e react ou Vue.js
 
-##Features
+## Features
 
 - [ ] back-end
 
