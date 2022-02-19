@@ -1,42 +1,33 @@
 <header class="">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-warning ">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger" aria-label="Third navbar example">
+        <div class="container-fluid">
+{{--            <a class="navbar-brand" href="#">Expand at sm</a>--}}
+            <img src="{{asset('img/logo.svg')}}" class="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-       <div>
-           <a href="" class="navbar-brand">Desapegax</a>
-       </div>
-
-
-        <!-- Menu Hamburguer -->
-        <button class="navbar-toggler" data-toggle="collapse"
-                data-target="#navegacao2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- navegacao -->
-        <div class="collapse navbar-collapse d-flex justify-content-between p-2" id="navegacao2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Serviços</a>
-                </li>
-            </ul>
-
-            <!-- Formulário -->
-{{--            <form class="form-inline">--}}
-{{--                <input type="text" class="form-control" placeholder="pesquisar...">--}}
-{{--                <button class="btn btn-outline-success">ok</button>--}}
-{{--            </form>--}}
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Teste</a>
+                    </li>
+                </ul>
+                <a href="" class="btn btn-dark btn-login">Login</a>
+{{--                <form class="d-flex">--}}
+{{--                    <input class="form-control me-2 " type="text" placeholder="Search" aria-label="Search">--}}
+{{--                    <button class="btn btn-outline-primary " type="submit">Search</button>--}}
+{{--                </form>--}}
+            </div>
         </div>
-
     </nav>
+
 </header>
+
+
