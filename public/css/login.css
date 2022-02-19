@@ -1,0 +1,23 @@
+.form{
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px gray;
+    background-color: #e2e8f0;
+    margin: 100px auto;
+}
+.input{
+    border-radius: 20px !important;
+}
+.label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .4rem;
+}
+.title-login{
+    padding: 1rem;
+    text-align: center;
+}
+.button-login{
+    margin: 2em 0;
+    border-radius: 20px !important;
+}
