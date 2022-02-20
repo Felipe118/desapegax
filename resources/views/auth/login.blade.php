@@ -2,6 +2,12 @@
 @section('titulo','Login')
 
 @section('content')
+    @if(session()->has('message'))
+        <div class="text-success alert alert-success d-flex justify-content-center mt-3">
+            {{session('message')}}
+        </div>
+
+    @endif
     <div class="form form_login col-5">
         <h1 class="title-login text-danger">LOGIN</h1>
         <form action="" method="">
@@ -9,6 +15,8 @@
                 <label for="" class="form-label label">E-mail</label>
                 <input type="" class="form-control input mb-4" name=""  placeholder="E-mail" required>
             </div>
+
+
 
             <div class="form-group ">
                 <label for="" class="form-label label">Senha</label>
