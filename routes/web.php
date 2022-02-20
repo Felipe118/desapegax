@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login','App\Http\Controllers\LoginController@index')->name('desapegax.login');
-
+Route::get('/register','App\Http\Controllers\LoginController@register')->name('desapegax.register');
+Route::post('/register','App\Http\Controllers\LoginController@registerPost')->name('desapegax.registerPost');

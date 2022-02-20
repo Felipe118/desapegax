@@ -11,4 +11,14 @@ class LoginController extends Controller
         return view('auth.login');
 
     }
+
+    public function register()
+    {
+        return view('register.register');
+    }
+
+    public function registerPost(Request $request)
+    {
+        dd($request->all());
+    }
 }

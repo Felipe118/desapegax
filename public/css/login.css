@@ -1,4 +1,4 @@
-.form{
+.form_login{
     padding: 1rem;
     border-radius: 20px;
     box-shadow: 3px 3px 3px gray;
@@ -21,3 +21,7 @@
     margin: 2em 0;
     border-radius: 20px !important;
 }
+.link-register{
+    text-decoration:none;
+}
+

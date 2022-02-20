@@ -1,0 +1,22 @@
+.register_form{
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px gray;
+    background-color: #e2e8f0;
+    margin: 100px auto;
+}
+.container_register{
+    padding: 1rem;
+}
+.ml{
+    margin-left: 50px;
+}
+.form_endereco{
+    padding: 1rem 0;
+}
+.title_register{
+    margin: 1em 0;
+}
+.register_btn{
+    margin: 3rem 0;
+}

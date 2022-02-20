@@ -2,7 +2,7 @@
 @section('titulo','Login')
 
 @section('content')
-    <div class="form col-5">
+    <div class="form form_login col-5">
         <h1 class="title-login text-danger">LOGIN</h1>
         <form action="" method="">
             <div class="form-group ">
@@ -17,7 +17,7 @@
 
             <button type="submit" class="btn btn btn-outline-success button-login col-12">Entrar</button>
 
-            <p>Não tem conta ? <a href="">Clique Aqui</a></p>
+            <p>Não tem conta ? <a href="{{route('desapegax.register')}}" class="link-register">Clique Aqui</a></p>
 
         </form>
     </div>
