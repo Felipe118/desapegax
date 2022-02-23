@@ -15,7 +15,7 @@
     <title>Desapegax - @yield('titulo')</title>
 </head>
 <body>
-@include('auth.layout.header_login')
+@include('register.layout.header')
 <section class="container-fluid container-base">
     @yield('content')
 </section>

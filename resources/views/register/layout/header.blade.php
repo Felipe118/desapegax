@@ -19,6 +19,7 @@
                         <a class="nav-link">Teste</a>
                     </li>
                 </ul>
+                <a href="{{route('desapegax.login')}}" class="btn btn-dark btn-login">Login</a>
 
             </div>
         </div>
