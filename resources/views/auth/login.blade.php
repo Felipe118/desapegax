@@ -10,7 +10,14 @@
         <div class="text-danger alert alert-danger d-flex justify-content-center mt-3">
             {{session('message_erro')}}
         </div>
-
+    @elseif(session()->has('message_auth_erro'))
+    <div class="text-danger alert alert-danger d-flex justify-content-center mt-3">
+        {{session('message_auth_erro')}}
+    </div>
+    @elseif(session()->has('message_auth_authentication'))
+        <div class="text-danger alert alert-danger d-flex justify-content-center mt-3">
+            {{session('message_auth_authentication')}}
+        </div>
     @endif
     <div class="form form_login col-5">
         <h1 class="title-login text-danger">LOGIN</h1>

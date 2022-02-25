@@ -27,7 +27,7 @@ class LoginController extends Controller
             'password.required' => 'O campo senha é obrigatório'
         ];
 
-        $request->validate($rules, $feedback );
+        $request->validate($rules, $feedback ); 
 
         $email = $request->get('email');
         $user = new User;
@@ -38,17 +38,23 @@ class LoginController extends Controller
 
 
         if($password_check){
-            $_SESSION['nome'] = $user_auth->name;
+            session_start();
+            $_SESSION['name'] = $user_auth->name;
             $_SESSION['email'] = $user_auth->email;
 
-            //session()->flash('message_auth', 'Registrado com sucesso!');
-            dd('Logado');
+            return redirect()->route('app.home');
 
         }else{
             session()->flash('message_auth_erro', 'E-mail ou senha inválidos');
-            //return redirect()->route('desapegax.login');
-            dd('Errado');
+            return redirect()->route('desapegax.login');
+            //dd('Errado');
         }
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        return redirect('/');
     }
 
     public function register()
