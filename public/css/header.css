@@ -9,3 +9,8 @@
 .container-base{
     min-height:60vh;
 }
+.menu_link{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+}

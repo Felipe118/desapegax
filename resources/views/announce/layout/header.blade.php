@@ -13,14 +13,13 @@
                         <a class="nav-link active menu_link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="{{route('anuncio.create')}}">Anunciar</a>
+                        <a class="nav-link menu_link" href="#">Seus Anuncios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="">Teste</a>
+                        <a class="nav-link menu_link">Perfil</a>
                     </li>
                 </ul>
                 <a href="{{route('app.logout')}}" class="btn btn-dark btn-login">Sair</a>
-
             </div>
         </div>
     </nav>
