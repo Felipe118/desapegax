@@ -13,7 +13,7 @@
                         <a class="nav-link active menu_link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="#">Seus Anuncios</a>
+                        <a class="nav-link menu_link" href="#">Anuncios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu_link">Perfil</a>

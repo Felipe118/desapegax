@@ -3,5 +3,14 @@
 @section('titulo', 'Criar Anuncio')
 
 @section('content')
-    <h1>Create</h1>
+    <section>
+        <h1>Criar Anuncio</h1>
+        <form action="">
+          <div class="form-group">
+              <label for="">Nome:</label>
+              <input type="text" name="" placeholder="">
+          </div>
+
+        </form>
+    </section>
 @endsection

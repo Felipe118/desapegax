@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('cep');
             $table->string('logradouro');
             $table->string('bairro');
+            $table->string('permissao')->nullable();
             $table->string('numero');
             $table->string('cidade');
             $table->string('estado')->nullable();

@@ -13,7 +13,7 @@ class AnuncioController extends Controller
      */
     public function index()
     {
-        return view('announce');
+        // return view('announce');
     }
 
     /**
