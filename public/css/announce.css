@@ -1,0 +1,20 @@
+.form-announce{
+    
+    padding: 1.2rem;
+}
+.title-announce{
+    text-align: center;
+    padding: 1rem;
+}
+.btn-announce{
+    padding: .5rem 1.5rem ;
+    border: 1px solid red;
+    border-radius: 20px;
+    margin: 2rem 0;
+}
+.btn-announce:hover{
+    border: none;
+    background-color: red;
+    color: white;
+    transition: 1s;
+}

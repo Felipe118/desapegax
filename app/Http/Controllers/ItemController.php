@@ -24,7 +24,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('announce.create_announce');
     }
 
 
@@ -36,7 +36,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->name);
     }
 
     /**

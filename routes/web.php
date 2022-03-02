@@ -28,6 +28,6 @@ Route::post('/register','App\Http\Controllers\LoginController@registerPost')->na
 Route::middleware('authentication')->prefix('/app')->group(function(){
     Route::get('/home','App\Http\Controllers\HomeController@home')->name('app.home');
     Route::get('/logout','App\Http\Controllers\LoginController@logout')->name('app.logout');
-    Route::resource('anuncio', 'App\Http\Controllers\AnuncioController');
+    Route::resource('anuncio', 'App\Http\Controllers\ItemController');
 
 });
