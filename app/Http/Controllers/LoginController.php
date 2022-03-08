@@ -31,12 +31,12 @@ class LoginController extends Controller
 
         $email = $request->get('email');
         $user = new User;
-        $user_auth = $user->where('email',$email)->get()->first();
+        $user_auth = $user->where('email',$email)->get()->first() ;
         $password = $request->get('password');
         $password_user = $user_auth->password;
         $password_check = Hash::check($password, $password_user);
-
-
+    
+            
         if($password_check){
             session_start();
             $_SESSION['name'] = $user_auth->name;
