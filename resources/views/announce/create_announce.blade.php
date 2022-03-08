@@ -1,6 +1,6 @@
 @extends('announce.layout.base')
 
-@section('titulo', 'Criar Anuncio')
+@section('titulo', 'Criar Anuncio') 
 
 @section('content')
     <section class="container-fluid col-12">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-7 mt-3 ">
                     <label for="" class="label">Descrição Produto</label>
-                    <textarea autocapitalize="none" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea autocapitalize="none" class="form-control" name="description" id="" cols="30" rows="10"></textarea>
                 </div>
 
                 <button class="btn-announce">Anunciar</button>

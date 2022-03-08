@@ -36,7 +36,21 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->name);
+        // $rules = [];
+        // $feedback = [];
+
+        // $request->validate($rules,$feedback);
+
+        $image = $request->file('image');
+        $image_urn = $image->store('img_announce','public');
+
+        Item::create([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'image'=>$image_urn,
+            'description' => $request->description
+        ]);
+        dd($image_urn);
     }
 
     /**

@@ -9,4 +9,11 @@ class Item extends Model
 {
     protected $fillable = [];
     use HasFactory;
+
+    public function categoria()
+    {
+        $this->hasOne('App\Models\Categoria');
+    }
+
+
 }
