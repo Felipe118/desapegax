@@ -16,8 +16,19 @@
                         <a class="nav-link menu_link" href="{{route('anuncio.create')}}">Anunciar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="">Teste</a>
+                        <a class="nav-link menu_link" href="#">Teste</a>
                     </li>
+                    
+                    @foreach ($users as $user)
+                        @if ($user->email === $_SESSION['email'] && $user->permission === 'admin')
+                            <li class="nav-item">
+                                <a class="nav-link menu_link" href="{{route('categoria.list')}}">Categorias</a>
+                            </li>
+                         @endif
+                    @endforeach
+                   
+                
+                   
                 </ul>
                 <a href="{{route('app.logout')}}" class="btn btn-dark btn-login">Sair</a>
 

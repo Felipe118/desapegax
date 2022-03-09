@@ -39,6 +39,7 @@ class LoginController extends Controller
             
         if($password_check){
             session_start();
+            $_SESSION['id'] = $user_auth->id;
             $_SESSION['name'] = $user_auth->name;
             $_SESSION['email'] = $user_auth->email;
 

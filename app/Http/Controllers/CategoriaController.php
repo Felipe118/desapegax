@@ -24,7 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create_category');
     }
 
     /**
@@ -47,6 +47,12 @@ class CategoriaController extends Controller
     public function show(Categoria $categoria)
     {
         //
+    }
+
+    public function list()
+    {
+        $categorias = Categoria::all();
+        return view('category.list_category',['categorias'=> $categorias]);
     }
 
     /**
