@@ -16,6 +16,12 @@
                     <label for="" class="label">Preço:</label>
                     <input type="text" class="form-control" name="price" placeholder="Preço">
                 </div>
+                <div class="form-group d-flex col-3 mt-3">
+                    <label for="" class="label">Categoria:</label>
+                    <select name="" class="form-select" id="">
+                       <option value="">Teste</option>
+                    </select>
+                </div>
                 <div class="col-7 mt-3">
                     <label for="" class="label">Imagem</label>
                     <input type="file" class="form-control" name="image" id="image">

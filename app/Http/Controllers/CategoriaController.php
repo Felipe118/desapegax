@@ -35,7 +35,20 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'name_category' => 'required|unique:categorias,name_category'
+        ];
+        $feedback = [
+            'required' => 'O campo categoria é obrigatório',
+            'name_category.unique' => 'Categoria já existente'
+        ];
+
+        $request->validate($rules,$feedback);
+
+        Categoria::create($request->all());
+
+        session()->flash('message_category', 'Categoria cadastrada com sucesso');
+        return redirect()->route('categoria.create');
     }
 
     /**

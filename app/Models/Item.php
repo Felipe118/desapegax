@@ -12,7 +12,7 @@ class Item extends Model
 
     public function categoria()
     {
-        $this->hasOne('App\Models\Categoria');
+        $this->belongsTo('App\Models\Categoria');
     }
 
 

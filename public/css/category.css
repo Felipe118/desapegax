@@ -4,3 +4,16 @@
 .btn-list-category{
     margin:50px 38% !important;
 }
+.title-category{
+    padding: 1.2rem;
+    text-align: center;
+}
+.container-form-category{
+    padding: 1rem;
+    margin: 100px auto;
+}
+.container-form-category label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-bottom: .5rem;
+}

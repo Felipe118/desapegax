@@ -16,7 +16,7 @@
    <tbody>
    @foreach($categorias as $categoria)
         <tr>
-            <td>{{$categoria->nome}}</td>
+            <td>{{$categoria->name_category}}</td>
             <td class="d-flex">
                 <a href="#" class="btn btn-primary me-md-3" >Editar</a>
                 <form action="# " method="post" >

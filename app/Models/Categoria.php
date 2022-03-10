@@ -9,8 +9,11 @@ class Categoria extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name_category'];
+
     public function item()
     {
-        $this->belongsTo('App\Models\item');
+        $this->hasMany('App\Models\Item');
     }
+ 
 }

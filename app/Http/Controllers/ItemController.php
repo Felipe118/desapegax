@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Categoria;
+
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -24,7 +26,8 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('announce.create_announce');
+        $categorias = Categoria::all();
+        return view('announce.create_announce', ['categorias' => $categorias]);
     }
 
 
