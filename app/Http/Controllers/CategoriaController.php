@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoriaController extends Controller
 {
@@ -14,7 +15,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -53,13 +54,12 @@ class CategoriaController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Categoria  $categoria
+     * @param \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
     public function show(Categoria $categoria)
     {
-        //
+        return view('category.edit_category',['categoria' => $categoria] );
     }
 
     public function list()
@@ -88,9 +88,27 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        //
-    }
+       
+        $rules = [
+            'name_category' => [
+                'required',
+                Rule::unique('categorias')->ignore($categoria->id),
+            ]
+        ];
+        $feedback = [
+            'required' => 'O campo categoria é obrigatório',
+            'name_category.unique' => 'Categoria já existente'
+        ];
 
+        $request->validate($rules,$feedback);
+
+        $categoria->name_category = $request->name_category;
+        $categoria->save();
+
+        return redirect()->route('categoria.list');
+       
+       //Categoria::update($request->all());
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -99,6 +117,7 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+       $categoria->delete();
+       return redirect()->route('categoria.list');
     }
 }

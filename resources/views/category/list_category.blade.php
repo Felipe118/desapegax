@@ -18,8 +18,8 @@
         <tr>
             <td>{{$categoria->name_category}}</td>
             <td class="d-flex">
-                <a href="#" class="btn btn-primary me-md-3" >Editar</a>
-                <form action="# " method="post" >
+                <a href="{{route('categoria.show',['categoria' => $categoria ])}}" class="btn btn-primary me-md-3" >Editar</a>
+                <form action="{{route('categoria.destroy',['categoria' => $categoria->id ])}}" method="post" >
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger">Delete</button>
