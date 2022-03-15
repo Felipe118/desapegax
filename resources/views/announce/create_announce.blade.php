@@ -3,7 +3,7 @@
 @section('titulo', 'Criar Anuncio') 
 
 @section('content')
-    <section class="container-fluid col-12">
+    <section class="container-fluid col-12 container-announce">
         <h1 class="title-announce">Criar Anuncio</h1>
         <div class="form-announce col-8">
             <form action="{{route('anuncio.store')}}" method="POST" enctype="multipart/form-data">

@@ -11,9 +11,9 @@ class Categoria extends Model
 
     protected $fillable = ['name_category'];
 
-    public function item()
+    public function items()
     {
-        $this->hasMany('App\Models\Item');
+        return $this->hasMany(Item::class,'categoria_id');
     }
  
 }

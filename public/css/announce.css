@@ -1,7 +1,12 @@
 .form-announce{
-    
-    padding: 1.2rem;
+    padding: 2rem;
 }
+.container-announce{
+    padding: 1.2rem;
+  
+  
+}
+
 .title-announce{
     text-align: center;
     padding: 1rem;

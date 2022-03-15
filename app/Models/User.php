@@ -30,7 +30,7 @@ class User extends Authenticatable
     ];
 
     public function items(){
-        $this->hasMany('App\Models\Item');
+        return $this->hasMany(Item::class,'user_id');
     }
 
     /**

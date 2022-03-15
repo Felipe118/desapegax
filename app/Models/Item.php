@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['name','description','price','image','active','categoria_id','user_id'];
     use HasFactory;
 
     public function categoria()
     {
-        $this->belongsTo('App\Models\Categoria');
+        return $this->belongsTo('App\Models\Categoria');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 
 
