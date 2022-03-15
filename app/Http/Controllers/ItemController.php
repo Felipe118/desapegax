@@ -38,22 +38,33 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
+        
         // $rules = [];
         // $feedback = [];
 
         // $request->validate($rules,$feedback);
-
+     // dd($request->all());
+        $id = $_SESSION['id'];
         $image = $request->file('image');
         $image_urn = $image->store('img_announce','public');
+        
+       $item = Item::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'image' => $image_urn,
+            'active' => 1,
+            'description' => $request->description,
+            'categoria_id'=> $request->categoria_id,
+            'user_id' => $id
+            ]);
 
-        Item::create([
-            'name'=>$request->name,
-            'price'=>$request->price,
-            'image'=>$image_urn,
-            'description' => $request->description
-        ]);
-        dd($image_urn);
+            if(!$item){
+                session()->flash('message_announce_error', 'Erro ao cadastrar o item');
+                return redirect()->route('');
+            }
+            session()->flash('message_announce_success', 'Item cadastrado');
+            return redirect()->route('');
     }
 
     /**

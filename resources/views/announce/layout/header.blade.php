@@ -13,10 +13,10 @@
                         <a class="nav-link active menu_link" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="#">Anuncios</a>
+                        <a class="nav-link menu_link" href="#">Anunciar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link">Perfil</a>
+                        <a class="nav-link menu_link">Anuncios</a>
                     </li>
                 </ul>
                 <a href="{{route('app.logout')}}" class="btn btn-dark btn-logout">Sair</a>

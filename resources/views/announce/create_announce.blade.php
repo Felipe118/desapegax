@@ -16,10 +16,12 @@
                     <label for="" class="label">Preço:</label>
                     <input type="text" class="form-control" name="price" placeholder="Preço">
                 </div>
-                <div class="form-group d-flex col-3 mt-3">
+                <div class="form-group d-flex col-4 mt-3">
                     <label for="" class="label">Categoria:</label>
-                    <select name="" class="form-select" id="">
-                       <option value="">Teste</option>
+                    <select name="categoria_id" class="form-select" id="">
+                        @foreach ($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->name_category}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-7 mt-3">
