@@ -18,7 +18,6 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->float('price',8,2);
-            $table->string('image');
             $table->boolean('active');
             $table->unsignedBigInteger('categoria_id');
             $table->unsignedBigInteger('user_id');
