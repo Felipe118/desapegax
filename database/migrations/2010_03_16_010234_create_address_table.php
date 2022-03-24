@@ -21,7 +21,7 @@ class CreateAddressTable extends Migration
             $table->string('permission')->nullable();
             $table->string('number');
             $table->string('city');
-            $table->string('state')->nullable();
+            $table->string('uf')->nullable();
             $table->string('complement')->nullable();
             $table->timestamps();
         });

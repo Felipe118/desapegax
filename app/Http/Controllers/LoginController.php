@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -70,33 +71,21 @@ class LoginController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc',
             'password' => 'required',
-            'cep' => 'required',
-            'logradouro' => 'required',
-            'bairro' => 'required',
-            'numero' => 'required',
-            'cidade' => 'required',
         ];
         $feedback = [
             'required' => 'O campo :attribute é obrigatório',
-            'name.email' => 'E-mail Inválido'
+            'email.email' => 'E-mail Inválido'
         ];
         $request->validate($rules,$feedback);
-          session()->flash('message', 'Registrado com sucesso!');
 
-          $password_hash = Hash::make($request->password);
+        $password_hash = Hash::make($request->password);
 
-       $user=   User::create([
-              'name' => $request->name,
-              'email' => $request->email,
-              'password' => $password_hash,
-              'cep' => $request->cep,
-              'logradouro' => $request->logradouro,
-              'bairro' =>$request->bairro ,
-              'numero' => $request->numero,
-              'cidade' => $request->cidade,
-              'estado' => $request->estado
-
-          ]);
+        $user =   User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $password_hash,
+        ]);
+    
 
        if($user){
            session()->flash('message', 'Registrado com sucesso!');

@@ -7,6 +7,7 @@
 }
 .container_register{
     padding: 1rem;
+    margin: 0 auto;
 }
 .ml{
     margin-left: 50px;
@@ -19,4 +20,19 @@
 }
 .register_btn{
     margin: 3rem 0;
+}
+.btn-register{
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: .4rem 0;
+}
+.btn-register:hover{
+    background-color: #e2e8f0;
+    border: 1px solid red;
+    color: red;
+    transition: 1s;
+    border-radius: 20px;
+    padding: .4rem 0;
 }

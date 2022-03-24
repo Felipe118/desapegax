@@ -19,8 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             //$table->timestamp('email_verified_at')->nullable();
+            $table->unsignedBigInteger('address_id');
+
+            //FK
+            $table->foreign('address_id')->references('id')->on('address');
             $table->rememberToken();
             $table->timestamps();
+
+
         });
     }
 
@@ -31,6 +37,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::table('users', function (Blueprint  $table) {
+            $table->dropForeign('users_address_id_foreign');
+        });
         Schema::dropIfExists('users');
     }
 }

@@ -21,16 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'cep',
-        'logradouro',
-        'bairro',
-        'numero',
-        'cidade',
-        'estado'
+        'address_id'
     ];
 
     public function items(){
         return $this->hasMany(Item::class,'user_id');
+    }
+    public function address(){
+        return $this->hasOn(Address::class,'address_id');
     }
 
     /**
