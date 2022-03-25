@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    protected $fillable = ['cep','address','district','permission','number','city','uf','complement'];
+    protected $fillable = ['cep','address','district','number','city','uf','complement'];
     
     use HasFactory;
 

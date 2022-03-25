@@ -18,7 +18,6 @@ class CreateAddressTable extends Migration
             $table->string('cep');
             $table->string('address');
             $table->string('district');
-            $table->string('permission')->nullable();
             $table->string('number');
             $table->string('city');
             $table->string('uf')->nullable();

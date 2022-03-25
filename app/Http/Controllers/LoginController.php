@@ -73,7 +73,7 @@ class LoginController extends Controller
             'password' => 'required',
         ];
         $feedback = [
-            'required' => 'O campo :attribute é obrigatório',
+            'required' => 'O campo é obrigatório',
             'email.email' => 'E-mail Inválido'
         ];
         $request->validate($rules,$feedback);
@@ -84,6 +84,7 @@ class LoginController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => $password_hash,
+                'permission' => 'user'
         ]);
     
 
