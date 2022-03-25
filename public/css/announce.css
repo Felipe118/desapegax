@@ -1,10 +1,12 @@
 .form-announce{
-    padding: 2rem;
+    padding: 2.5rem;
+    margin: 4rem auto;
+    background-color: #e2e8f0;
+    box-shadow: 3px 3px 3px gray;
+    border-radius: 20px;
 }
 .container-announce{
     padding: 1.2rem;
-  
-  
 }
 
 .title-announce{
@@ -16,7 +18,7 @@
     border: 1px solid red;
     font-weight: bold;
     border-radius: 20px;
-    margin: 2rem 0;
+    margin: 2rem auto;
 }
 .btn-announce:hover{
     border: none;

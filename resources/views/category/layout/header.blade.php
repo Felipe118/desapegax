@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample03">
                 <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                     <li class="nav-item">
-                        <a class="nav-link active menu_link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active menu_link" aria-current="page" href="{{route('app.home')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link menu_link" href="{{route('anuncio.create')}}">Anuncios</a>
