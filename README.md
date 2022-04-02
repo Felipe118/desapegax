@@ -1,7 +1,7 @@
 # Desapegax 
 
 ## Descricção Projeto
-Desapax é um sistema feito em laravel, inicialemnte será 
+Desapegax é um sistema feito em laravel, inicialemnte será 
 no estilo do desapega e olx, onde usuário vai poder postar itens para vender ou trocar
 
 ### Projeto 
