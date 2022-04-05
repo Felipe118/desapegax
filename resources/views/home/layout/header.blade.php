@@ -19,7 +19,7 @@
                         <a class="nav-link menu_link" href="#">Teste</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu_link" href="#">Perfil</a>
+                        <a class="nav-link menu_link" href="{{route('profile.index')}}">Perfil</a>
                     </li>
                     
                     @foreach ($users as $user)

@@ -29,6 +29,7 @@ Route::middleware('authentication')->prefix('/app')->group(function(){
     Route::get('/home','App\Http\Controllers\HomeController@home')->name('app.home');
     Route::get('/logout','App\Http\Controllers\LoginController@logout')->name('app.logout');
     Route::resource('anuncio', 'App\Http\Controllers\ItemController');
+    Route::resource('profile', 'App\Http\Controllers\UserController');
     Route::resource('categoria', 'App\Http\Controllers\CategoriaController')->parameters([
         'categoria' => 'categoria'
     ]);;

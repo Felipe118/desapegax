@@ -1,0 +1,29 @@
+.body{
+    background-color: rgb(222, 223, 223);
+}
+.container-cards{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.card{
+    box-shadow: 10px 10px 10px rgb(112, 110, 110);
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-cards h3{
+    padding: 1rem;
+  text-align: center;
+}
+.form-profile{
+    padding: 0 1.2rem;
+   
+}
+.title-profile{
+    text-align: center;
+    padding: 1rem;
+}
