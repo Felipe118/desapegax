@@ -34,8 +34,14 @@ class LoginController extends Controller
         $user = new User;
         $user_auth = $user->where('email',$email)->get()->first() ;
         $password = $request->get('password');
-        $password_user = $user_auth->password;
-        $password_check = Hash::check($password, $password_user);
+        if(is_object($user_auth)){
+            $password_user = $user_auth->password;
+            $password_check = Hash::check($password, $password_user);
+        }else{
+            session()->flash('message_auth_erro', 'E-mail ou senha inválidos');
+            return redirect()->route('desapegax.login');
+        }
+       
     
             
         if($password_check){
