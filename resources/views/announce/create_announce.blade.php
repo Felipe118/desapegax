@@ -6,7 +6,7 @@
     <section class="container-fluid col-12 container-announce">
         <h1 class="title-announce">Criar Anuncio</h1>
         <div class="form-announce col-6">
-            <form action="{{route('anuncio.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('anuncio.store')}}" method="POST">
                 @csrf
                 <div class="form-group col-10">
                     <label for="" class="label">Nome:</label>

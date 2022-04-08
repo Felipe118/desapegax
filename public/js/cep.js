@@ -1,5 +1,5 @@
 function getDadosEnderecoPorCEP(cep) {
-    let url = 'https://viacep.com.br/ws/'+cep+'/json/unicode/'
+    let url = 'https://viacep.com.br/ws/'+cep+'/json/'
 
     let xmlHttp = new XMLHttpRequest()
     xmlHttp.open('GET', url)
