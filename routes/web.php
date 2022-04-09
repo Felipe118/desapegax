@@ -28,6 +28,7 @@ Route::post('/register','App\Http\Controllers\LoginController@registerPost')->na
 Route::middleware('authentication')->prefix('/app')->group(function(){
     Route::get('/home','App\Http\Controllers\HomeController@home')->name('app.home');
     Route::get('/logout','App\Http\Controllers\LoginController@logout')->name('app.logout');
+    Route::post('/atualizar','App\Http\Controllers\UserController@atualizar')->name('profile.atualizar');
     Route::resource('anuncio', 'App\Http\Controllers\ItemController');
     Route::resource('profile', 'App\Http\Controllers\UserController');
     Route::resource('categoria', 'App\Http\Controllers\CategoriaController')->parameters([

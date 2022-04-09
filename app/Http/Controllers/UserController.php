@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -14,7 +16,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('profile.create');
+       // session_start();
+        $profile =  DB::table('users')->select('*')->where('id',$_SESSION['id'])->get();
+        $user = $profile[0];
+        return view('profile.create', ['user' => $user,'profile' => $profile]);
     }
 
 
@@ -66,12 +71,15 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        //
+        dd($request->all());
+    }
+    public function atualizar(Request $request)
+    {
+        dd($request->all());
     }
 
     /**
