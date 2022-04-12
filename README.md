@@ -18,6 +18,10 @@ separando front-end do back-end
 - [ ] cadastro de itens
 
 ##  Tecnologias
+- PHP
+- Laravel
+- JS
+- VueJS
 
 ## 🛠️ Abrir e rodar o projeto
 ### Status
