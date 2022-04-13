@@ -77,9 +77,24 @@ class UserController extends Controller
     {
         dd($request->all());
     }
-    public function atualizar(Request $request)
+    public function atualizar(Request $request,User $user )
     {
+        // $rules = [];
+        // $feedback = [];
+        // $request->validate($rules,$feedback);
+
+
         dd($request->all());
+        DB::table('users')->updateOrInsert(
+            [
+                'email'=> $request->name,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'password' => $request->password
+            
+            ]
+        );
+
     }
 
     /**

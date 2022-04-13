@@ -19,19 +19,23 @@
                     <div class="form-group mb-2 p-2 col-10">
                         <label for="">Telefone</label>
                         <input type="text" class="form-control" v-model="phone" v-mask="'(##)#####-####'" name="phone">
-                    </div>
+                    </div> 
 
                     <div class="form-group mb-2 p-2 col-10">
                         <label for="">E-mail</label>
                         <input type="text" class="form-control" name="email" value="{{$user->email != '' ? $user->email : ''}}">
                     </div>
-
-                    <div class="form-group mb-2 p-2 col-10">
+                    
+                    <div class="form-check col-11 mb-4">
+                        <input type="checkbox" name=""  v-on:click=" show_password = !show_password " id="show_password">
+                        <label for="">Mudar Senha</label>
+                    </div>
+                    <div class="form-group mb-2 p-2 col-10" v-if="show_password">
                         <label for="">Senha atual</label>
                         <input type="password" name="password_atual" class="form-control" name="" >
                     </div>
 
-                    <div class="form-group mb-2 p-2 col-10">
+                    <div class="form-group mb-2 p-2 col-10" v-if="show_password" >
                         <label for="">Nova senha</label>
                         <input type="password" class="form-control" name="password" >
                     </div>
