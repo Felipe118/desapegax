@@ -29,7 +29,7 @@ class User extends Authenticatable
         return $this->hasMany(Item::class,'user_id');
     }
     public function address(){
-        return $this->hasOn(Address::class,'address_id');
+        return $this->belongsTo('App\Models\Adress');
     }
 
     /**

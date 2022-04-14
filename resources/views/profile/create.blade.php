@@ -3,6 +3,7 @@
 
 @section('content')
     <section class="container-fluid container-cards">
+        
         <h1 class="title-profile">Meu cadastro</h1>
       
             <form action="{{route('profile.atualizar')}}" class="form-profile" method="POST">
@@ -68,8 +69,8 @@
                      </div>
                      <div class="address_separator col-12 ">
                         <div class="form-group mb-2 p-2 col-3">
-                            <label for="">UF</label>
-                            <select name="" id="uf" class="form-select">
+                            <label for="">UF</label> 
+                            <select name="uf" id="uf" class="form-select">
                                 <option value=""></option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>

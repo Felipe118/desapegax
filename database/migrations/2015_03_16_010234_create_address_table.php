@@ -22,6 +22,9 @@ class CreateAddressTable extends Migration
             $table->string('city');
             $table->string('uf')->nullable();
             $table->string('complement')->nullable();
+
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -33,6 +36,9 @@ class CreateAddressTable extends Migration
      */
     public function down()
     {
+        Schema::table('address', function (Blueprint  $table) {
+            $table->dropForeign('address_user_id_foreign');
+        });
         Schema::dropIfExists('address');
     }
 }
