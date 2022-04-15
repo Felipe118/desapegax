@@ -2,7 +2,7 @@
 var ProfileApp = new Vue({
     el:'.form-profile',
     data:{
-        phone: '',
+      
         show_password: false
     },
     methods:{

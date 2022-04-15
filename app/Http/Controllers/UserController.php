@@ -90,41 +90,57 @@ class UserController extends Controller
          ];
          $request->validate($rules,$feedback);
 
-        $email = $request->get('email');
-        //$users = new User;
-        $user_auth = DB::table('users')->where('email',$email)->get()->first() ;
-        $password = $request->get('password');
-        if(is_object($user_auth)){
-            $password_user = $user_auth->password;
+         //dd($request->all());
+
+         $email = $_SESSION['email'];
+         $user_auth = DB::table('users')->where('email',$email)->get()->first() ;
+         $password_user = $user_auth->password;
+         $new_password = $request->get('new_password');
+
+         if($request->get('password') != null){
+           
+            $password = $request->get('password');
             $password_check = Hash::check($password, $password_user);
-        }else{
-            session()->flash('message_auth_erro', 'Senha Incorreta');
-            return redirect()->route('profile.create');
-        }
+            if($password_check){
+                $password_hash = Hash::make($new_password);
+            }else{
+                session()->flash('message_auth_erro', 'Senha Incorreta');
+                return redirect()->route('profile.index');
+            }
+    
+         }
 
 
-       // dd($request->all());
+       
+       
+
+       //dd($request->all());
         DB::table('users')->where('id',$_SESSION['id'])->update(
             [
                 'name'=> $request->name,
                 'phone' => $request->phone,
-                'password' => $request->password,
+                'password' => isset($password_hash) ? $password_hash : $password_user,
             ]
         );
-        DB::table('address')->updateOrInsert(
-            [
-                'cep' => $request->cep,
-                'address' => $request->address,
-                'district' => $request->district,
-                'number' => $request->number,
-                'city' => $request->city,
-                'uf' => $request->uf,
-                'complement' => $request->complement != null ? $request->complement : '',
-                'user_id' => $_SESSION['id']
-                
-            ]
-    );
 
+        $address = DB::table('address')->where('user_id',$_SESSION['id'])->get()->first() ;
+        if(!is_object($address)){
+            DB::table('address')->updateOrInsert(
+                [
+                    'cep' => $request->cep,
+                    'address' => $request->address,
+                    'district' => $request->district,
+                    'number' => $request->number,
+                    'city' => $request->city,
+                    'uf' => $request->uf,
+                    'complement' => $request->complement != null ? $request->complement : '',
+                    'user_id' => $_SESSION['id']
+                    
+                ]
+             );
+    
+        }
+      
             session()->flash('message_profile_success', 'Perfil Atualizado');
             return redirect()->route('app.home');
 

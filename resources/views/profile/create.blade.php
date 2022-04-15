@@ -3,6 +3,16 @@
 
 @section('content')
     <section class="container-fluid container-cards">
+        @if (session()->has('message_auth_erro'))
+            <div class="text-danger alert alert-danger mb-3 d-flex justify-content-center mt-3">
+                {{session('message_auth_erro')}}
+            </div>
+        @endif
+        @if ($errors->has('cep'))
+            <div class="text-danger alert alert-danger mb-3 d-flex justify-content-center mt-3">
+                {{$errors->first('cep')}}
+            </div>
+        @endif
         
         <h1 class="title-profile">Meu cadastro</h1>
       
@@ -19,13 +29,13 @@
 
                     <div class="form-group mb-2 p-2 col-10">
                         <label for="">Telefone</label>
-                        <input type="text" class="form-control" v-model="phone" v-mask="'(##)#####-####'" name="phone">
+                        <input type="text" class="form-control"  v-mask="'(##)#####-####'" name="phone" value="{{$user->phone != '' ? $user->phone : '' }}">
                     </div> 
 
-                    <div class="form-group mb-2 p-2 col-10">
+                    {{-- <div class="form-group mb-2 p-2 col-10">
                         <label for="">E-mail</label>
                         <input type="text" class="form-control" name="email" value="{{$user->email != '' ? $user->email : ''}}">
-                    </div>
+                    </div> --}}
                     
                     <div class="form-check col-11 mb-4">
                         <input type="checkbox" name=""  v-on:click=" show_password = !show_password " id="show_password">
@@ -33,12 +43,12 @@
                     </div>
                     <div class="form-group mb-2 p-2 col-10" v-if="show_password">
                         <label for="">Senha atual</label>
-                        <input type="password" name="password_atual" class="form-control" name="" >
+                        <input type="password" name="password" class="form-control"  >
                     </div>
 
                     <div class="form-group mb-2 p-2 col-10" v-if="show_password" >
                         <label for="">Nova senha</label>
-                        <input type="password" class="form-control" name="password" >
+                        <input type="password" class="form-control" name="new_password" >
                     </div>
                 </div>
                 <div class="card col-6 card-address">
@@ -46,7 +56,8 @@
                         <div class="form-group mb-2 p-2 col-4">
                             <label for="">Cep</label>
                             <input type="text" class="form-control" name="cep" v-mask="'#####-###'"  id="cep" onblur="getDadosEnderecoPorCEP(this.value)">
-                        </div>
+                        </div><br>
+                        
                         <div class="form-group mb-2 p-2 col-7">
                             <label for="">Endereço</label>
                             <input type="text" class="form-control" name="address" id="endereco">
