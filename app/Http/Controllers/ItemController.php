@@ -47,23 +47,23 @@ class ItemController extends Controller
      // dd($request->all());
         $id = $_SESSION['id'];
        
-        dd($request->allFiles());
+        //dd($request->image);
         
 
         
         
        $item = Item::create([
-            'name' => $request->name,
-            'price' => $request->price,
-            'active' => 1,
-            'description' => $request->description,
-            'categoria_id'=> $request->categoria_id,
-            'user_id' => $id
+                'name' => $request->name,
+                'price' => $request->price,
+                'active' => 1,
+                'description' => $request->description,
+                'categoria_id'=> $request->categoria_id,
+                'user_id' => $id
             ]);
 
-            for($i = 0; $i < count($request->allFiles()['image']); $i++){
-                $image = $request->allFiles()['image'][$i];
-    
+            for($i = 0; $i < count($request->image); $i++){
+                $image = $request->image[$i];
+               // dd($image);
                 $imageModel = new Image();
                 $imageModel->item_id = $item->id;
                 $imageModel->path = $image->file->store('img_announce','public');
