@@ -21,11 +21,13 @@ class CreateItemsTable extends Migration
             $table->boolean('active');
             $table->unsignedBigInteger('categoria_id');
             $table->unsignedBigInteger('user_id');
+           
 
             //FK
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->foreign('user_id')->references('id')->on('users');
-
+          
+            
             $table->timestamps();
         });
     }
@@ -40,6 +42,7 @@ class CreateItemsTable extends Migration
         Schema::table('items', function (Blueprint  $table) {
             $table->dropForeign('items_categoria_id_foreign');
             $table->dropForeign('items_user_id_foreign');
+            
         });
         Schema::dropIfExists('items');
     }

@@ -19,7 +19,7 @@ class CreateImageTable extends Migration
             $table->unsignedBigInteger('item_id');
             $table->timestamps();
 
-            #FK
+            //FK
             $table->foreign('item_id')->references('id')->on('items');
 
         });
@@ -32,7 +32,7 @@ class CreateImageTable extends Migration
      */
     public function down()
     {
-        Schema::table('image', function (Blueprint  $table) {
+        Schema::table('items', function (Blueprint  $table) {
             $table->dropForeign('image_item_id_foreign');
         });
         Schema::dropIfExists('image');

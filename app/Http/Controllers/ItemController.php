@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Categoria;
-
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -46,18 +46,30 @@ class ItemController extends Controller
         // $request->validate($rules,$feedback);
      // dd($request->all());
         $id = $_SESSION['id'];
-        $image = $request->file('image');
-        $image_urn = $image->store('img_announce','public');
+       
+        dd($request->allFiles());
+        
+
+        
         
        $item = Item::create([
             'name' => $request->name,
             'price' => $request->price,
-            'image' => $image_urn,
             'active' => 1,
             'description' => $request->description,
             'categoria_id'=> $request->categoria_id,
             'user_id' => $id
             ]);
+
+            for($i = 0; $i < count($request->allFiles()['image']); $i++){
+                $image = $request->allFiles()['image'][$i];
+    
+                $imageModel = new Image();
+                $imageModel->item_id = $item->id;
+                $imageModel->path = $image->file->store('img_announce','public');
+                unset($imageModel);
+        
+            }
 
             if(!$item){
                 session()->flash('message_announce_error', 'Erro ao cadastrar o item');

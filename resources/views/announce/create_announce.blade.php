@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-10 mt-3">
                     <label for="" class="label">Imagem</label>
-                    <input type="file" class="form-control" name="image" id="image">
+                    <input type="file" class="form-control" name="image[]" id="image" multiple>
                 </div>
                 <div class="col-10 mt-3 ">
                     <label for="" class="label">Descrição Produto</label>
