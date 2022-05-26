@@ -14,7 +14,7 @@ separando front-end do back-end
 
 - [ ] back-end
 - [ ] front-end
-- [ ] Autenticação de usuários
+- [x] Autenticação de usuários
 - [ ] cadastro de itens
 
 ##  Tecnologias
@@ -22,6 +22,7 @@ separando front-end do back-end
 - Laravel
 - JS
 - VueJS
+- MySQl
 
 ## 🛠️ Abrir e rodar o projeto
 ### Status
